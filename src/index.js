@@ -1,35 +1,34 @@
-// NinjaOne Design System — entry point.
+// NinjaOne Design System — collateral components.
 //
-// Tokens are not bundled here; load them once, globally:
+// Load the tokens once, globally:
 //   import 'ninjaone-design-system/tokens/tokens.css'
 //
-// Two surfaces:
-//   · product   — dark RMM console components (below)
-//   · marketing — light datasheet/document components ('./marketing/index.js')
+// Everything here targets the light document surface: datasheets, one-sheets,
+// guides, briefs. Wrap a page in `.no-surface-doc` to set the ground.
 
-// Product (dark surface)
-export { Button } from './components/Button.jsx';
-export { Pill } from './components/Pill.jsx';
-export { Icon, registerIcons } from './components/Icon.jsx';
-export { KpiCard } from './components/KpiCard.jsx';
-export { AlertList } from './components/AlertList.jsx';
-export { DeviceTable } from './components/DeviceTable.jsx';
-export { DeviceDetail } from './components/DeviceDetail.jsx';
-export { PatchPanel } from './components/PatchPanel.jsx';
-export { Sidebar } from './components/Sidebar.jsx';
-export { TopBar } from './components/TopBar.jsx';
-export { App } from './components/App.jsx';
+// Page furniture
+export { DocHero } from './DocHero.jsx';
+export { DocFooter } from './DocFooter.jsx';
+export { GuideCover } from './GuideCover.jsx';
+export { GuidePage } from './GuidePage.jsx';
 
-// Marketing (light surface)
-export {
-  DocHero,
-  Chevrons,
-  Overline,
-  SpecTable,
-  Callout,
-  StatCard,
-  PullQuote,
-  PlatformDiagram,
-  DocFooter,
-  Datasheet,
-} from './marketing/index.js';
+// Blocks
+export { SectionHeading } from './SectionHeading.jsx';
+export { Overline } from './Overline.jsx';
+export { FeatureGrid } from './FeatureGrid.jsx';
+export { SpecTable } from './SpecTable.jsx';
+export { Callout } from './Callout.jsx';
+export { StatCard } from './StatCard.jsx';
+export { PullQuote } from './PullQuote.jsx';
+export { PlatformDiagram } from './PlatformDiagram.jsx';
+export { LogoWall } from './LogoWall.jsx';
+export { Tag } from './Tag.jsx';
+
+// Motifs
+export { Chevrons } from './Chevrons.jsx';
+export { DotGrid } from './DotGrid.jsx';
+export { Icon, registerIcons } from './Icon.jsx';
+
+// Worked examples — full documents built from the parts above
+export { Datasheet } from './Datasheet.jsx';
+export { Guide } from './Guide.jsx';

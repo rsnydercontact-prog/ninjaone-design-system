@@ -1,11 +1,13 @@
 /* ============================================================
    NinjaOne Design System — tokens
    ------------------------------------------------------------
-   Two surfaces share one brand layer:
-     · product   — dark, near-black canvas (RMM console)
-     · marketing — light, navy-on-white (datasheets, decks, docs)
+   Built for collateral: datasheets, one-sheets, guides, briefs.
+   The document surface is light — navy ink on white, tinted
+   panels, hairline rules. The dark ramp below is still here
+   because the brand's filled panels (hero bands, guide covers)
+   are navy and need it.
 
-   Brand values below were extracted from official 2025 collateral,
+   Brand values were extracted from official 2025 collateral,
    not eyeballed. Provenance: docs/brand-evidence.md
    ============================================================ */
 
@@ -43,7 +45,7 @@
      2. NEUTRALS
      ============================================================ */
 
-  /* Dark ramp — product canvas */
+  /* Dark ramp — filled navy panels and dark surfaces */
   --ink-0:   #000814;
   --ink-1:   #04111D;       /* near-black canvas */
   --ink-2:   #08243B;       /* surface */
@@ -89,7 +91,7 @@
   --ninja-teal:      #25A7A7;
 
   /* ============================================================
-     4. SEMANTIC — product (dark)
+     4. SEMANTIC — dark surface
      ============================================================ */
   --bg-app:     var(--ink-1);
   --bg-surface: var(--ink-2);
@@ -106,7 +108,7 @@
   --border-strong: rgba(255,255,255,0.14);
 
   /* ============================================================
-     5. SEMANTIC — marketing (light)
+     5. SEMANTIC — document surface (light) — the default
      ============================================================ */
   --doc-bg:            var(--paper);
   --doc-surface:       var(--wash-mint-pale);
@@ -294,9 +296,10 @@ table, .no-kpi, .no-mono { font-variant-numeric: tabular-nums; }
 
 /* ============================================================
    Surface scopes
-   Wrap a subtree to opt it into one of the two surfaces.
+   Wrap a page in .no-surface-doc; use .no-surface-dark for the
+   navy panels inside it.
    ============================================================ */
-.no-surface-product {
+.no-surface-dark {
   background: var(--bg-app);
   color: var(--text-primary);
   font-family: var(--font-sans);

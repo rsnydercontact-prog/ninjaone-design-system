@@ -2,8 +2,8 @@
 //   variant="band"  navy filled band, white headline, green wordmark  (Patch Manager datasheet)
 //   variant="light" white ground, navy headline, blue wordmark        (Vulnerability datasheet)
 import { Chevrons } from './Chevrons.jsx';
-import wordmarkGreen from '../../assets/ninjaone-logo-green.png';
-import wordmarkBlue from '../../assets/ninjaone-wordmark-blue.png';
+import wordmarkGreen from '../assets/ninjaone-logo-green.png';
+import wordmarkBlue from '../assets/ninjaone-wordmark-blue.png';
 
 export function DocHero({ title, subtitle, variant = 'band', logo = true, children }) {
   const isBand = variant === 'band';

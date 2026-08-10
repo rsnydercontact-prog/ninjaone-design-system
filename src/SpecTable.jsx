@@ -1,7 +1,7 @@
 // NinjaOne marketing — feature / included table
 // Green rule under the header row, hairline rules between rows, green check
 // for included, small-caps note text for qualified answers.
-import { Icon } from '../components/Icon.jsx';
+import { Icon } from './Icon.jsx';
 
 export function SpecTable({ columns = ['Feature', 'Included'], rows }) {
   const cell = {

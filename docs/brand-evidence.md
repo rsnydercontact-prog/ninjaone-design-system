@@ -73,6 +73,9 @@ The v1 kit was built by eye and got three things wrong:
 - **Logo lockups.** `assets/` has the green wordmark (for dark grounds) and a
   `#007DA5` wordmark cropped at 600 dpi from the vulnerability datasheet. Both
   are raster; the vector originals should replace them.
-- **Product UI components.** They are plausible RMM recreations, not screenshots
-  of the shipping console. The marketing components, by contrast, are rebuilt
-  directly from the datasheets above.
+- **Partner logos.** `LogoWall` ships no marks; the integrations grid in the
+  vulnerability datasheet is reproduced as a layout only.
+
+Nothing else is guessed. Every component in `src/` is rebuilt from one of the
+documents above — the datasheet layouts from the three datasheets and the macOS
+one-sheet, the cover and interior page from the Essential Guide.

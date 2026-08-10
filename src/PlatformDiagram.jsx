@@ -1,7 +1,7 @@
 // NinjaOne marketing — platform diagram
 // The recurring "Manage / Protect / Support → endpoints → platform" figure.
 // Appears in the Patch Manager, Vulnerability, and macOS one-sheets.
-import { Icon } from '../components/Icon.jsx';
+import { Icon } from './Icon.jsx';
 
 const DEFAULT_PILLARS = [
   { title: 'Manage',  body: 'Monitor and manage every endpoint' },

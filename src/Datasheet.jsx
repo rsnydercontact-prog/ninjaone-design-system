@@ -1,7 +1,10 @@
-// NinjaOne marketing — full datasheet composition
-// A worked example: this is the Patch Manager datasheet rebuilt from the kit,
-// and the reference for how the marketing components sit together on a page.
+// NinjaOne — full datasheet composition
+// A worked example: the Patch Manager datasheet rebuilt from the kit, and the
+// reference for how these components sit together on a page.
 import { DocHero } from './DocHero.jsx';
+import { FeatureGrid } from './FeatureGrid.jsx';
+import { SectionHeading } from './SectionHeading.jsx';
+import { LogoWall } from './LogoWall.jsx';
 import { Callout } from './Callout.jsx';
 import { SpecTable } from './SpecTable.jsx';
 import { StatCard } from './StatCard.jsx';
@@ -40,6 +43,12 @@ const VALUE_PROPS = [
   { title:'Scale with confidence', body:'Consistent patching across thousands of endpoints without added infrastructure.' },
 ];
 
+// Partner marks aren't shipped with the kit — pass `src` per logo to use real ones.
+const INTEGRATIONS = [
+  { name:'Zendesk' }, { name:'Microsoft Azure' }, { name:'SentinelOne' }, { name:'Slack' }, { name:'CrowdStrike' },
+  { name:'Okta' }, { name:'ServiceNow' }, { name:'HaloPSA' }, { name:'OneLogin' }, { name:'Rewst' },
+];
+
 const STATS = [
   { value:'10-15', label:'Tools replaced', quote:'Before, I needed 10-15 different tools to execute what NinjaOne does in its centralized, single pane of glass.', source:'Vetcor' },
   { value:'98%',   label:'CSAT score',     quote:'I have never experienced the speed or knowledge of support the NinjaOne team exhibited with any other RMM vendor.', source:'InHouse Support' },
@@ -74,17 +83,10 @@ export function Datasheet() {
       </div>
 
       <section style={{ background:'var(--mist-6)', borderRadius:'var(--radius-doc)', padding:'var(--space-7)' }}>
-        <h2 style={{ margin:0, fontSize:'var(--fs-h3)', fontWeight:'var(--fw-semibold)', color:'var(--doc-subheading)' }}>
-          Why NinjaOne Patch Manager?
-        </h2>
+        <SectionHeading size="h3" accent={false}>Why NinjaOne Patch Manager?</SectionHeading>
         <div style={{ height:1, background:'var(--mist-2)', margin:'var(--space-5) 0' }} />
-        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:'var(--space-7)' }}>
-          <div style={{ display:'flex', flexDirection:'column', gap:'var(--space-4)' }}>
-            {VALUE_PROPS.slice(0, 3).map(v => <ValueProp key={v.title} {...v} />)}
-          </div>
-          <div style={{ display:'flex', flexDirection:'column', gap:'var(--space-4)' }}>
-            {VALUE_PROPS.slice(3).map(v => <ValueProp key={v.title} {...v} />)}
-          </div>
+        <div style={{ display:'grid', gridTemplateColumns:'2fr 1fr', gap:'var(--space-7)' }}>
+          <FeatureGrid items={VALUE_PROPS} columns={2} />
           <PullQuote
             quote="Patch automation was transformative for our IT team. What once took weeks with WSUS now runs seamlessly with NinjaOne—every device updated, no blind spots, and far less disruption."
             role="CISO"
@@ -94,7 +96,7 @@ export function Datasheet() {
       </section>
 
       <section style={{ textAlign:'center' }}>
-        <h2 style={{ margin:0, fontSize:'var(--fs-h3)', fontWeight:'var(--fw-semibold)', color:'var(--doc-subheading)' }}>Why NinjaOne?</h2>
+        <SectionHeading size="h3" accent={false} align="center">Why NinjaOne?</SectionHeading>
         <p style={{ maxWidth:640, margin:'var(--space-5) auto 0', fontSize:'var(--fs-body-lg)', lineHeight:'var(--lh-relaxed)', color:'var(--doc-text)' }}>
           NinjaOne, the automated endpoint management platform, delivers visibility, security, and control over
           all endpoints for more than 30,000 customers in 130+ countries. It is proven to increase productivity,
@@ -111,16 +113,13 @@ export function Datasheet() {
         </div>
       </section>
 
-      <DocFooter />
-    </div>
-  );
-}
+      <LogoWall
+        title="NinjaOne Integrations"
+        footnote="See all integrations"
+        logos={INTEGRATIONS}
+      />
 
-function ValueProp({ title, body }) {
-  return (
-    <div>
-      <div style={{ fontSize:'var(--fs-small)', fontWeight:'var(--fw-semibold)', color:'var(--doc-text)' }}>{title}</div>
-      <p style={{ margin:'2px 0 0', fontSize:'var(--fs-small)', lineHeight:'var(--lh-normal)', color:'var(--doc-text)' }}>{body}</p>
+      <DocFooter />
     </div>
   );
 }

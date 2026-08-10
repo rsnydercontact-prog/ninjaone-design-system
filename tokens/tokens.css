@@ -1,0 +1,314 @@
+/* ============================================================
+   NinjaOne Design System — tokens
+   ------------------------------------------------------------
+   Two surfaces share one brand layer:
+     · product   — dark, near-black canvas (RMM console)
+     · marketing — light, navy-on-white (datasheets, decks, docs)
+
+   Brand values below were extracted from official 2025 collateral,
+   not eyeballed. Provenance: docs/brand-evidence.md
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ============================================================
+     1. BRAND
+     Source: NinjaOne_2025 1.0 PPT theme (clrScheme "ninjaOne-2024")
+     + fill colors sampled from five 2025 datasheet PDFs.
+     ============================================================ */
+
+  --ninja-navy:         #004668;   /* PRIMARY. Theme dk1/dk2/accent1. Hero bands, headings, body ink */
+  --ninja-blue-medium:  #007DA5;   /* Subheads, stat figures, section overlines (Pantone 2185) */
+  --ninja-cyan:         #00A6CE;   /* Theme accent2. Links */
+  --ninja-teal-deep:    #066C6C;   /* Theme accent3 */
+  --ninja-teal-bright:  #31DDD8;   /* Theme accent4 */
+  --ninja-green-deep:   #068947;   /* Theme accent5 */
+  --ninja-green:        #04FF88;   /* Theme accent6. Vivid green — logo on dark, primary accent */
+  --ninja-green-check:  #70C173;   /* Muted green — checkmarks, "included" affirmations in print */
+  --ninja-purple:       #6F346F;   /* Secondary accent (Pantone 2622) */
+
+  /* Legacy — the older logo navy. Still ships on some marks.
+     Prefer --ninja-navy for anything new. */
+  --ninja-blue-deep:    #053856;
+
+  /* Gradient. A precious resource: hero headline, one key chart stroke,
+     one feature button. Never a broad fill. */
+  --ninja-gradient:       linear-gradient(90deg, #04FF88 0%, #55EBFF 100%); /* @kind color */
+  --ninja-gradient-diag:  linear-gradient(135deg, #04FF88 0%, #55EBFF 100%); /* @kind color */
+  --ninja-gradient-light: linear-gradient(135deg, #F2F9FA 0%, #F2FAF6 100%); /* @kind color */
+  --ninja-cyan-light:     #55EBFF;   /* gradient endpoint */
+
+  /* ============================================================
+     2. NEUTRALS
+     ============================================================ */
+
+  /* Dark ramp — product canvas */
+  --ink-0:   #000814;
+  --ink-1:   #04111D;       /* near-black canvas */
+  --ink-2:   #08243B;       /* surface */
+  --ink-3:   #0E2E48;       /* raised */
+  --ink-4:   #143A55;       /* hover */
+  --ink-5:   #1F4D6B;       /* pressed */
+
+  --slate-1: #2E5973;
+  --slate-2: #547A91;
+  --slate-3: #8FA8B8;
+  --slate-4: #B8C8D2;
+  --slate-5: #D9E2E8;
+  --slate-6: #EEF2F5;
+  --paper:   #FFFFFF;
+
+  /* Light ramp — marketing/print. Sampled from the datasheets. */
+  --mist-1:  #5099AD;       /* muted teal — secondary text on light */
+  --mist-2:  #B6CACC;       /* hairline rules */
+  --mist-3:  #C4DBDF;       /* chevron motif, diagram tiles */
+  --mist-4:  #DFE3E3;       /* theme lt2 — dividers */
+  --mist-5:  #E8EDED;       /* neutral panel */
+  --mist-6:  #F2F6F7;       /* lightest neutral panel */
+
+  /* Tinted surfaces — the mint/cyan washes that carry the print layouts */
+  --wash-mint:      #DFF7EA;   /* green tint strip (platform diagram) */
+  --wash-mint-pale: #F2FAF6;   /* callout cards, stat cards */
+  --wash-cyan:      #E1F3F4;   /* cool tint panels */
+  --wash-cyan-pale: #F2F9FA;
+
+  /* ============================================================
+     3. STATUS
+     ============================================================ */
+  --status-success: #00AA5F;
+  --status-info:    #007DA5;
+  --status-warning: #F39500;
+  --status-danger:  #E5484D;
+  --status-danger-print: #E3665E;   /* softer red used in print */
+  --status-critical-print: #A82121;
+  --ninja-orange:   #FF6027;        /* highlight accent (guide covers) */
+
+  --ninja-green-600: #00CC6A;
+  --ninja-green-700: #00AA5F;
+  --ninja-teal:      #25A7A7;
+
+  /* ============================================================
+     4. SEMANTIC — product (dark)
+     ============================================================ */
+  --bg-app:     var(--ink-1);
+  --bg-surface: var(--ink-2);
+  --bg-raised:  var(--ink-3);
+  --bg-hover:   var(--ink-4);
+  --bg-pressed: var(--ink-5);
+
+  --text-primary:   #FFFFFF;
+  --text-secondary: var(--slate-4);
+  --text-tertiary:  var(--slate-3);
+  --text-disabled:  var(--slate-2);
+
+  --border-subtle: rgba(255,255,255,0.08);
+  --border-strong: rgba(255,255,255,0.14);
+
+  /* ============================================================
+     5. SEMANTIC — marketing (light)
+     ============================================================ */
+  --doc-bg:            var(--paper);
+  --doc-surface:       var(--wash-mint-pale);
+  --doc-surface-cool:  var(--wash-cyan);
+  --doc-surface-flat:  var(--mist-6);
+  --doc-band:          var(--ninja-navy);   /* filled hero band */
+
+  --doc-text:          var(--ninja-navy);   /* body ink is navy, not black */
+  --doc-text-muted:    var(--mist-1);
+  --doc-heading:       var(--ninja-navy);
+  --doc-subheading:    var(--ninja-blue-medium);
+  --doc-overline:      var(--ninja-blue-medium);
+  --doc-on-band:       #FFFFFF;
+  --doc-on-band-muted: #C4DBDF;
+  --doc-rule:          var(--mist-2);
+  --doc-rule-strong:   var(--ninja-green);
+
+  /* ============================================================
+     6. TYPE
+     Geologica  — 2025 collateral + product.
+     Montserrat — corporate deck template (NinjaOne_2025 1.0).
+     ============================================================ */
+  --font-sans:    'Geologica', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-deck:    'Montserrat', 'Geologica', -apple-system, sans-serif;
+  --font-display: 'Geologica', 'Inter', -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --fs-display:  56px;
+  --fs-h1:       40px;
+  --fs-h2:       30px;
+  --fs-h3:       22px;
+  --fs-h4:       18px;
+  --fs-body-lg:  16px;
+  --fs-body:     14px;   /* dashboard default */
+  --fs-small:    13px;
+  --fs-caption:  12px;
+  --fs-overline: 11px;
+
+  --fw-regular:   400;
+  --fw-medium:    500;
+  --fw-semibold:  600;
+  --fw-bold:      700;
+  --fw-extrabold: 800;
+
+  --lh-tight:   1.1;
+  --lh-snug:    1.25;
+  --lh-normal:  1.45;
+  --lh-relaxed: 1.6;
+
+  --ls-tight:    -0.02em;
+  --ls-normal:   0;
+  --ls-wide:     0.04em;
+  --ls-overline: 0.08em;
+
+  /* ============================================================
+     7. SPACE / RADIUS / SHADOW
+     ============================================================ */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+  --space-5: 20px;  --space-6: 24px;  --space-7: 32px;  --space-8: 40px;
+  --space-9: 48px;  --space-10: 64px; --space-11: 80px; --space-12: 96px;
+
+  --radius-xs:   2px;
+  --radius-sm:   4px;    /* inputs / badges */
+  --radius-md:   6px;    /* buttons */
+  --radius-lg:   8px;    /* cards */
+  --radius-xl:   12px;   /* large containers */
+  --radius-doc:  16px;   /* print/marketing panels + hero bands */
+  --radius-pill: 999px;  /* tags only — never CTAs */
+
+  --shadow-1: 0 1px 2px rgba(4,17,29,0.4);
+  --shadow-2: 0 4px 12px rgba(4,17,29,0.5);
+  --shadow-3: 0 12px 32px rgba(4,17,29,0.6);
+  --shadow-glow-green: 0 0 0 1px rgba(4,255,136,0.4), 0 8px 24px rgba(4,255,136,0.25);
+
+  --shadow-light-1: 0 1px 2px rgba(0,70,104,0.06), 0 1px 3px rgba(0,70,104,0.08);
+  --shadow-light-2: 0 4px 12px rgba(0,70,104,0.08);
+  --shadow-light-3: 0 16px 40px rgba(0,70,104,0.12);
+
+  /* ============================================================
+     8. TINTED STATUS SURFACES
+     ============================================================ */
+  --status-success-bg: rgba(0,170,95,0.14);
+  --status-info-bg:    rgba(0,125,165,0.18);
+  --status-warning-bg: rgba(243,149,0,0.16);
+  --status-danger-bg:  rgba(229,72,77,0.18);
+  --status-neutral:    var(--slate-3);
+
+  /* ============================================================
+     9. ALIASES — kept so v1 markup keeps working
+     ============================================================ */
+  --bg-app-light:     var(--paper);
+  --bg-surface-light: var(--slate-6);
+  --bg-raised-light:  var(--slate-5);
+
+  --fg-1: var(--text-primary);
+  --fg-2: var(--text-secondary);
+  --fg-3: var(--text-tertiary);
+  --fg-4: var(--text-disabled);
+
+  --fg-1-light: var(--ninja-navy);
+  --fg-2-light: var(--slate-1);
+  --fg-3-light: var(--mist-1);
+  --fg-4-light: var(--slate-3);
+
+  --fg-accent:     var(--ninja-green);
+  --fg-on-accent:  var(--ink-1);
+
+  --border-1: var(--border-subtle);
+  --border-2: var(--border-strong);
+  --border-light-1: #E1E7EB;
+  --border-light-2: #CBD5DC;
+
+  --tracking-tight:    var(--ls-tight);
+  --tracking-normal:   var(--ls-normal);
+  --tracking-wide:     var(--ls-wide);
+  --tracking-overline: var(--ls-overline);
+}
+
+/* ============================================================
+   Semantic type classes
+   Hierarchy comes from weight + size — never from switching family.
+   ============================================================ */
+
+.no-display {
+  font: var(--fw-extrabold) var(--fs-display)/var(--lh-tight) var(--font-display);
+  letter-spacing: var(--ls-tight);
+}
+.no-h1 {
+  font: var(--fw-bold) var(--fs-h1)/var(--lh-tight) var(--font-display);
+  letter-spacing: var(--ls-tight);
+}
+.no-h2 {
+  font: var(--fw-bold) var(--fs-h2)/var(--lh-snug) var(--font-sans);
+  letter-spacing: var(--ls-tight);
+}
+.no-h3 {
+  font: var(--fw-semibold) var(--fs-h3)/var(--lh-snug) var(--font-sans);
+  letter-spacing: -0.01em;
+}
+.no-h4 {
+  font: var(--fw-semibold) var(--fs-h4)/var(--lh-snug) var(--font-sans);
+  letter-spacing: -0.01em;
+}
+.no-body {
+  font: var(--fw-regular) var(--fs-body)/var(--lh-normal) var(--font-sans);
+}
+.no-body-lg {
+  font: var(--fw-regular) var(--fs-body-lg)/var(--lh-relaxed) var(--font-sans);
+}
+.no-small {
+  font: var(--fw-regular) var(--fs-small)/var(--lh-normal) var(--font-sans);
+}
+.no-caption {
+  font: var(--fw-regular) var(--fs-caption)/var(--lh-normal) var(--font-sans);
+}
+.no-overline {
+  font: var(--fw-semibold) var(--fs-overline)/1.2 var(--font-sans);
+  letter-spacing: var(--ls-overline);
+  text-transform: uppercase;
+}
+.no-mono {
+  font: var(--fw-regular) var(--fs-caption)/var(--lh-normal) var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+.no-kpi {
+  font: var(--fw-bold) 32px/1 var(--font-display);
+  letter-spacing: var(--ls-tight);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Numerics always align in tables and KPIs. */
+table, .no-kpi, .no-mono { font-variant-numeric: tabular-nums; }
+
+.no-display, .no-h1, .no-h2, .no-h3, .no-h4,
+.no-body, .no-body-lg, .no-small, .no-caption,
+.no-overline, .no-mono, .no-kpi { margin: 0; }
+
+/* Utility: brand gradient text. Headline-scale only — thin text loses the ramp. */
+.no-gradient-text {
+  background: var(--ninja-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ============================================================
+   Surface scopes
+   Wrap a subtree to opt it into one of the two surfaces.
+   ============================================================ */
+.no-surface-product {
+  background: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+.no-surface-doc {
+  background: var(--doc-bg);
+  color: var(--doc-text);
+  font-family: var(--font-sans);
+}
+.no-surface-doc .no-h1,
+.no-surface-doc .no-h2 { color: var(--doc-heading); }
+.no-surface-doc .no-overline { color: var(--doc-overline); }
+.no-surface-doc .no-body,
+.no-surface-doc .no-small { color: var(--doc-text); }
+.no-surface-doc .no-caption { color: var(--doc-text-muted); }

@@ -1,0 +1,49 @@
+{
+  "name": "ninjaone-design-system",
+  "version": "2.0.0",
+  "description": "NinjaOne design system — verified brand tokens plus React components for the dark product UI and the light marketing/document surface.",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": "./src/index.js",
+    "./marketing": "./src/marketing/index.js",
+    "./tokens/tokens.css": "./tokens/tokens.css",
+    "./tokens/tokens.json": "./tokens/tokens.json",
+    "./package.json": "./package.json"
+  },
+  "types": "./src/index.d.ts",
+  "files": [
+    "src",
+    "tokens",
+    "assets",
+    "docs"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "ninjaone",
+    "react",
+    "brand"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "lucide-react": "^1.31.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.5",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "vite": "^8.2.1"
+  }
+}

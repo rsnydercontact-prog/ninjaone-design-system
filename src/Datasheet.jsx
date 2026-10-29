@@ -49,10 +49,11 @@ const INTEGRATIONS = [
   { name:'Okta' }, { name:'ServiceNow' }, { name:'HaloPSA' }, { name:'OneLogin' }, { name:'Rewst' },
 ];
 
+// Sample copy — illustrative figures and quotes, not real customer results.
 const STATS = [
-  { value:'10-15', label:'Tools replaced', quote:'Before, I needed 10-15 different tools to execute what NinjaOne does in its centralized, single pane of glass.', source:'Vetcor' },
-  { value:'98%',   label:'CSAT score',     quote:'I have never experienced the speed or knowledge of support the NinjaOne team exhibited with any other RMM vendor.', source:'InHouse Support' },
-  { value:'30%',   label:'Less time for patching', quote:'We observed a 30% reduction in the time taken for patch deployments compared to our previous solution.', source:'Alabbar Group' },
+  { value:'12',   label:'Tools consolidated', quote:'We retired a dozen separate tools and now run patching, monitoring, and remote support from one console.', source:'Contoso Health' },
+  { value:'96%',  label:'Patch compliance',   quote:'Our compliance numbers used to take a week to pull together. Now they are on a dashboard every morning.', source:'Northwind IT Services' },
+  { value:'35%',  label:'Less time for patching', quote:'Patch deployments take noticeably less of our week, and we spend far less time chasing failed updates.', source:'Fabrikam Group' },
 ];
 
 export function Datasheet() {
@@ -88,9 +89,9 @@ export function Datasheet() {
         <div style={{ display:'grid', gridTemplateColumns:'2fr 1fr', gap:'var(--space-7)' }}>
           <FeatureGrid items={VALUE_PROPS} columns={2} />
           <PullQuote
-            quote="Patch automation was transformative for our IT team. What once took weeks with WSUS now runs seamlessly with NinjaOne—every device updated, no blind spots, and far less disruption."
-            role="CISO"
-            company="Fortune 100 financial institution"
+            quote="Automated patching changed how our team works. What used to take weeks of manual effort now runs on schedule, with every device accounted for and far less disruption."
+            role="IT Director"
+            company="Sample organization"
           />
         </div>
       </section>

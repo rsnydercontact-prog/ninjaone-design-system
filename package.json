@@ -1,7 +1,8 @@
 {
   "name": "ninjaone-design-system",
   "version": "2.0.0",
-  "description": "NinjaOne collateral design system — verified brand tokens plus React components for datasheets, one-sheets, and guides.",
+  "description": "NinjaOne collateral design system \u2014 verified brand tokens plus React components for datasheets, one-sheets, and guides.",
+  "author": "Ryan Snyder",
   "type": "module",
   "license": "MIT",
   "sideEffects": [

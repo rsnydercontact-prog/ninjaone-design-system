@@ -16,7 +16,7 @@ export function GuidePage({ children, runningTitle, page, of, ratio = '17 / 22' 
       fontFamily:'var(--font-sans)',
     }}>
       <div style={{ display:'flex', justifyContent:'flex-end' }}>
-        <img src={wordmarkBlue} alt="NinjaOne" style={{ height:24, width:'auto' }} />
+        <img src={wordmarkBlue} alt="NinjaOne" style={{ height:24, width:'auto', mixBlendMode:'multiply' }} />
       </div>
       <div style={{ ...rule, marginTop:'var(--space-5)' }} />
 
